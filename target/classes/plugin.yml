@@ -1,0 +1,15 @@
+name: Draconic
+version: 1.0-CN
+main: me.lidan.draconic.Draconic
+api-version: 1.16
+authors: [ brandon3055, LidanTheGamer ]
+description: The Draconic Evolution Mod as a plugin
+commands:
+  aiflyto:
+    usage: /<command>
+  draconic:
+    usage: /<command>
+depend:
+  - HolographicDisplays
+  - Slimefun
+  - ProtocolLib

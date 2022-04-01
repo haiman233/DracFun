@@ -215,7 +215,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
              Block block = e.getClickedBlock();
              ItemStack tool = p.getInventory().getItemInMainHand();
               p.sendMessage("Interact 1");
-              p.sendMessage(Draconic.blockdata.get(block.getLocation()));
+              //p.sendMessage(Draconic.blockdata.get(block.getLocation()));
              HashMap<String,Object> blockdata = Database.select(block.getLocation());
               p.sendMessage("Interact 2");
              if (blockdata.size() == 0) return;
@@ -265,7 +265,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                  createFusionHolo(block.getLocation(),2);
              }
     
-              p.getOpenInventory().setItem();
+              //p.getOpenInventory().setItem();
               p.getInventory();
     
          }
@@ -367,7 +367,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
             if (e.getRawSlot() == 49){
                 profile.getGuideHistory().goBack(Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE));
                  SlimefunGuide.openMainMenu(profile,SlimefunGuideMode.SURVIVAL_MODE, 1);
-                 SlimefunGuide.openMainMenuAsync(p, SlimefunGuideMode.SURVIVAL_MODE, 1);
+                 //SlimefunGuide.openMainMenuAsync(p, SlimefunGuideMode.SURVIVAL_MODE, 1);
             }
             else if(!e.getCurrentItem().equals(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))){
                 SlimefunGuide.displayItem(profile,e.getCurrentItem(),true);
@@ -476,9 +476,9 @@ public class FusionCrafting implements Listener, CommandExecutor{
                         craftingHologram.delete();
                         for (Hologram holo : HologramsAPI.getHolograms(Draconic.getInstance())) {
                             if (holo.getLocation().distance(blockloc) < 5) {
-                                 holo.getLocation().subtract();
+                                 //holo.getLocation().subtract();
                                 new aiflyholo(holo, blockloc, 5000).runTaskTimer(Draconic.getInstance(), 0, 1);
-                                 new (e,p.getLocation(),1000).runTaskTimer(Draconic.getInstance(),0,1);
+                                //new (e,p.getLocation(),1000).runTaskTimer(Draconic.getInstance(),0,1);
                             }
                         }
                         new BukkitRunnable() {
@@ -499,7 +499,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                                 for (Hologram holo : HologramsAPI.getHolograms(Draconic.getInstance())) {
                                     if (holo.getLocation().distance(oblockloc) < 5) {
                                         holo.delete();
-                                         new (e,p.getLocation(),1000).runTaskTimer(Draconic.getInstance(),0,1);
+                                         //new (e,p.getLocation(),1000).runTaskTimer(Draconic.getInstance(),0,1);
                                     }
                                 }
                                 for (HashMap.Entry<Location, Location> entry : connectedInjectors.entrySet()) {
@@ -581,7 +581,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         for (HashMap.Entry<Location, Location> entry : connectedInjectors.entrySet()){
             if (injectors.size() == 8) break;
             if (entry.getValue().equals(center)) {
-               ("connectedinjector found");
+               //("connectedinjector found");
                 injectors.add(center.getWorld().getBlockAt(entry.getKey()));
             }
             HashMap<String,Object> blockdata = Database.select(entry.getKey());
@@ -716,6 +716,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         }
         return true;
         
+        /*
         inv.setItem(22, items[0]);
         inv.setItem(40, items[1]);
         inv.setItem(4,items[2]);
@@ -728,6 +729,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         inv.setItem(35,items[8]);
         inv.setItem(36,items[9]);
         inv.setItem(44,items[10]);
+         */
          
     }
     @EventHandler
