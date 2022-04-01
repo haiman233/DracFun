@@ -93,7 +93,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         for (String recipe: recipes.keySet()) {
             ItemStack result = recipes.get(recipe)[1];
             if (result.isSimilar(item)){
-                // p.sendMessage("Found Recipe! " + recipe);
+                 p.sendMessage("Found Recipe! " + recipe);
                 if (viewRecipe(p,recipe)){
                     return true;
                 }
@@ -278,7 +278,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         for (int i = 0; i < 54; i++) {
             inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
-        // p.sendMessage("openinv 1");
+         p.sendMessage("openinv 1");
         new BukkitRunnable() {
             @Override
             public void run() {
@@ -300,7 +300,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                 inv.setItem(44,items[7]);
                 inv.setItem(4,items[8]);
                 inv.setItem(40, (ItemStack) Draconic.DracSerializer.deserialize("rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAlsABGtleXN0ABNbTGphdmEvbGFuZy9PYmplY3Q7WwAGdmFsdWVzcQB+AAR4cHVyABNbTGphdmEubGFuZy5PYmplY3Q7kM5YnxBzKWwCAAB4cAAAAAR0AAI9PXQAAXZ0AAR0eXBldAAEbWV0YXVxAH4ABgAAAAR0AB5vcmcuYnVra2l0LmludmVudG9yeS5JdGVtU3RhY2tzcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GHOAIAAUkABXZhbHVleHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAKGnQACkRSQUdPTl9FR0dzcQB+AABzcQB+AAN1cQB+AAYAAAADcQB+AAh0AAltZXRhLXR5cGV0AAxkaXNwbGF5LW5hbWV1cQB+AAYAAAADdAAISXRlbU1ldGF0AApVTlNQRUNJRklDdACbeyJleHRyYSI6W3siYm9sZCI6dHJ1ZSwiaXRhbGljIjpmYWxzZSwidW5kZXJsaW5lZCI6ZmFsc2UsInN0cmlrZXRocm91Z2giOmZhbHNlLCJvYmZ1c2NhdGVkIjpmYWxzZSwiY29sb3IiOiJsaWdodF9wdXJwbGUiLCJ0ZXh0IjoiU3RhcnQgRnVzaW9uIn1dLCJ0ZXh0IjoiIn0="));
-                // p.sendMessage("inventory make " + (System.currentTimeMillis() - now));
+                 p.sendMessage("inventory make " + (System.currentTimeMillis() - now));
                 new BukkitRunnable() {
 
                     @Override
@@ -366,8 +366,8 @@ public class FusionCrafting implements Listener, CommandExecutor{
             PlayerProfile profile = PlayerProfile.find(p).get();
             if (e.getRawSlot() == 49){
                 profile.getGuideHistory().goBack(Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE));
-                // SlimefunGuide.openMainMenu(profile,SlimefunGuideMode.SURVIVAL_MODE, 1);
-                // SlimefunGuide.openMainMenuAsync(p, SlimefunGuideMode.SURVIVAL_MODE, 1);
+                 SlimefunGuide.openMainMenu(profile,SlimefunGuideMode.SURVIVAL_MODE, 1);
+                 SlimefunGuide.openMainMenuAsync(p, SlimefunGuideMode.SURVIVAL_MODE, 1);
             }
             else if(!e.getCurrentItem().equals(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))){
                 SlimefunGuide.displayItem(profile,e.getCurrentItem(),true);
@@ -456,7 +456,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                                 }
                                 energyGot += charge;
                                 breaker.removeCharge(entry.getKey(), charge);
-                                // p.sendMessage("more energy added " + charge);
+                                 p.sendMessage("more energy added " + charge);
                             }
                         }
                     }
