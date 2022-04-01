@@ -105,7 +105,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
     public static boolean viewRecipe(Player p,String recipe){
         if (recipes.get(recipe) == null) return false;
         ItemStack[] items = recipes.get(recipe);
-        Inventory inv = Bukkit.createInventory(p,54,"§bFusion Recipe");
+        Inventory inv = Bukkit.createInventory(p,54,"§b注入器配方");
         for (int i = 0; i < 54; i++){
             inv.setItem(i,new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
@@ -124,12 +124,12 @@ public class FusionCrafting implements Listener, CommandExecutor{
         inv.setItem(44,items[10]);
         ItemStack energyNeeded = new ItemStack(Material.DRAGON_EGG);
         ItemMeta meta = energyNeeded.getItemMeta();
-        meta.setDisplayName("§aEnergy Required: " + Draconic.CommaNumberFormat(recipepower.get(recipe)) + " §7J ⚡");
+        meta.setDisplayName("§a能量所需: " + Draconic.CommaNumberFormat(recipepower.get(recipe)) + " §7J ⚡");
         energyNeeded.setItemMeta(meta);
         inv.setItem(31,energyNeeded);
         ItemStack goBack = new ItemStack(Material.BARRIER);
         ItemMeta goBackMeta = energyNeeded.getItemMeta();
-        goBackMeta.setDisplayName("§cGo back");
+        goBackMeta.setDisplayName("§c返回");
         goBack.setItemMeta(goBackMeta);
         inv.setItem(49,goBack);
         p.openInventory(inv);
@@ -146,7 +146,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
 
     public static ItemStack getItemInjector(String tier){
         ItemStack injector = new ItemStack(Material.END_PORTAL_FRAME);
-        injector.getItemMeta().setDisplayName(tier + " Fusion Injector");
+        injector.getItemMeta().setDisplayName(tier + "聚合注入器");
         return injector;
     }
 
@@ -156,10 +156,10 @@ public class FusionCrafting implements Listener, CommandExecutor{
         SlimefunItem item = SlimefunItem.getById("DRACONIC_INJECTOR");
         if (item == null)
         {
-            if(tier == 1) meta.setDisplayName("§fBasic Fusion Injector");
-            if(tier == 2) meta.setDisplayName("§dWyvern Fusion Injector");
-            if(tier == 3) meta.setDisplayName("§6Draconic Fusion Injector");
-            if(tier == 4) meta.setDisplayName("§8Chaotic Fusion Injector");
+            if(tier == 1) meta.setDisplayName("§f基础聚合注入器");
+            if(tier == 2) meta.setDisplayName("§d飞龙聚合注入器");
+            if(tier == 3) meta.setDisplayName("§6神龙聚合注入器");
+            if(tier == 4) meta.setDisplayName("§8混沌聚合注入器");
             injector.setItemMeta(meta);
         }
         else{
@@ -274,7 +274,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
     // }
 
     public static void openInventory1(Player p, Location location){
-        Inventory inv = Bukkit.createInventory(p,54,"§bFusion Crafting");
+        Inventory inv = Bukkit.createInventory(p,54,"§b注入器合成");
         for (int i = 0; i < 54; i++) {
             inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
@@ -326,7 +326,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                 item = new ItemStack(Material.AIR);
             }
             if (lockedBlocks.get(blockloc) != 0d){
-                p.sendMessage("§cYou cannot break a locked block");
+                p.sendMessage("§c你无法破坏上锁的方块");
                 e.setCancelled(true);
                 return;
             }
@@ -351,7 +351,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
     public void dragInv(InventoryDragEvent e){
         Player p = (Player) e.getWhoClicked();
         String invname = p.getOpenInventory().getTitle();
-        if (invname.contains("§bFusion")){
+        if (invname.contains("§b注入器")){
             e.setCancelled(true);
         }
     }
@@ -361,7 +361,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
         Player p = (Player) e.getWhoClicked();
         String invname = p.getOpenInventory().getTitle();
         Inventory inv = e.getInventory();
-        if (invname.contains("§bFusion Recipe")){
+        if (invname.contains("§b注入器配方")){
             e.setCancelled(true);
             PlayerProfile profile = PlayerProfile.find(p).get();
             if (e.getRawSlot() == 49){
@@ -373,7 +373,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                 SlimefunGuide.displayItem(profile,e.getCurrentItem(),true);
             }
         }
-        else if (invname.contains("§bFusion Crafting")){
+        else if (invname.contains("§b注入器合成")){
             Location blockloc = ((Location) Draconic.allvars.get("openinv::" + p.getName())).clone();
             // p.sendMessage("invname = " + invname + " rawslot " + e.getRawSlot() +
             //        " slot " + e.getSlot());
@@ -408,7 +408,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                         if (fusionWorks == false){
                             lockedBlocks.put(blockloc,0d);
                             unlockConnectedInjectors(blockloc);
-                            p.sendMessage("§cThis Recipe Doesn't Exists. do /sf guide to check all recipes!");
+                            p.sendMessage("§c此配方无效，请在粘液科技书中查看所有配方!");
                         }
                     }
                 } else {
@@ -434,7 +434,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
             EnergyBreaker breaker = new EnergyBreaker();
             Hologram craftingHologram = HologramsAPI.createHologram(Draconic.getInstance(), hololoc);
             TextLine line1 = craftingHologram.appendTextLine("&6Charging %");
-            line1.setText("&6Charging 0%");
+            line1.setText("&6充能 0%");
             TextLine line2 = craftingHologram.appendTextLine("&6EN/MAXEN ");
             line2.setText("&a0/1M &7J &e⚡");
             new BukkitRunnable(){
@@ -462,7 +462,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
                     }
                     percentloaded = (double)energyGot/totalEnergy*100d;
                     String percentloadeds = String.format("%.2f",percentloaded);
-                    line1.setText("&6Charging " + percentloadeds + "%");
+                    line1.setText("&6充能 " + percentloadeds + "%");
                     line2.setText("&a" + Draconic.BigNumber(energyGot) +"/" + Draconic.BigNumber(totalEnergy) + " &7J &e⚡");
                     if (particle % 2 == 0){
                         oblockloc.getWorld().playSound(oblockloc, Sound.ITEM_FLINTANDSTEEL_USE,0.7f,1.3f);
@@ -558,7 +558,7 @@ public class FusionCrafting implements Listener, CommandExecutor{
     public static void onInvClose(InventoryCloseEvent e){
         Player p = (Player) e.getPlayer();
         String invname = e.getView().getTitle();
-        if (invname.contains("§bFusion Crafting")){
+        if (invname.contains("§b注入器合成")){
             ItemStack newitem = e.getInventory().getItem(22);
             Location blockloc = (Location) Draconic.allvars.get("openinv::" + p.getName());
             if (blockloc == null) {

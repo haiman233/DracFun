@@ -286,7 +286,7 @@ public final class Draconic extends AbstractAddon {
         NamespacedKey categoryId = new NamespacedKey(this, "Draconic");
         ItemStack categoryItem = new ItemStack(Material.DRAGON_EGG);
         ItemMeta meta = categoryItem.getItemMeta();
-        meta.setDisplayName("§6§lDraconic");
+        meta.setDisplayName("§6§l龙之研究");
         categoryItem.setItemMeta(meta);
         DraconicGroup = new ItemGroup(categoryId, categoryItem);
         DraconicGroup.register(this);
@@ -323,8 +323,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("DRACONIUM_INGOT") == null){
             SlimefunItemStack draconium_ingot = new SlimefunItemStack("DRACONIUM_INGOT", Material.PURPLE_DYE,
-                    "&dDraconium Ingot",
-                    "&7Used to craft draconic items");
+                    "&d龙锭",
+                    "&7用于合成龙之研究物品");
             ItemStack[] recipe = {
                     new ItemStack(Material.POPPED_CHORUS_FRUIT),null,null,
                     null,null,null,
@@ -338,8 +338,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("DRACONIUM_BLOCK") == null){
             SlimefunItemStack draconium_block = new SlimefunItemStack("DRACONIUM_BLOCK", Material.PURPUR_BLOCK,
-                    "&dDraconium Block",
-                    "&7Used to craft draconic items");
+                    "&d龙块",
+                    "&7用于合成龙之研究物品");
             ItemStack[] recipe = {
                     DRACONIUM_INGOT, DRACONIUM_INGOT,DRACONIUM_INGOT,
                     DRACONIUM_INGOT,DRACONIUM_INGOT,DRACONIUM_INGOT,
@@ -367,8 +367,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("DRACONIC_CORE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_CORE", Material.BLUE_DYE,
-                    "&bDraconic Core",
-                    "&7Used to craft draconic items");
+                    "&b龙芯",
+                    "&7用于合成龙之研究物品");
             ItemStack[] recipe = {
                     DRACONIUM_INGOT,new ItemStack(Material.GOLD_INGOT),DRACONIUM_INGOT,
                     new ItemStack(Material.GOLD_INGOT),new ItemStack(Material.DIAMOND),new ItemStack(Material.GOLD_INGOT),
@@ -382,8 +382,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("WYVERN_CORE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_CORE", Material.PINK_DYE,
-                    "&dWyvern Core",
-                    "&7Used to craft draconic items");
+                    "&d双足飞龙核心",
+                    "&7用于合成龙之研究物品");
             ItemStack[] recipe = {
                     DRACONIUM_INGOT,DRACONIC_CORE,DRACONIUM_INGOT,
                     DRACONIC_CORE,new ItemStack(Material.NETHER_STAR),DRACONIC_CORE,
@@ -397,8 +397,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("WYVERN_ENERGY_CORE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_ENERGY_CORE", Material.MAGENTA_DYE,
-                    "&dWyvern Energy Core",
-                    "&7Used to craft draconic items");
+                    "&d飞龙能量核心",
+                    "&7能量核心的重要合成材料");
             ItemStack[] recipe = {
                     DRACONIUM_INGOT,new ItemStack(Material.REDSTONE_BLOCK),DRACONIUM_INGOT,
                     new ItemStack(Material.REDSTONE_BLOCK),DRACONIC_CORE,new ItemStack(Material.REDSTONE_BLOCK),
@@ -412,8 +412,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("FUSION_CORE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("FUSION_CORE", Material.GLASS,
-                    "&bFusion Crafting Core",
-                    "&9Fusion Crafting Core");
+                    "&b聚合核心",
+                    "&9一种珍奇的材料");
             ItemStack[] recipe = {
                     new ItemStack(Material.LAPIS_BLOCK),new ItemStack(Material.DIAMOND), new ItemStack(Material.LAPIS_BLOCK),
                     new ItemStack(Material.DIAMOND),DRACONIC_CORE,new ItemStack(Material.DIAMOND),
@@ -426,8 +426,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("DRAGON_HEART") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRAGON_HEART", Material.RED_DYE,
-                    "&6Dragon Heart",
-                    "&7Used to craft draconic items","&7Obtained from killing a dragon");
+                    "&6龙之心",
+                    "&7听说...它十分稀有","&7杀死末影龙掉落");
             ItemStack[] recipe = {
                     null,null,null,
                     null,null,null,
@@ -441,10 +441,10 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("WYVERN_HELMET") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_HELMET", Material.LEATHER_HELMET,
-                    "&dWyvern Helmet",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,400000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&d双足飞龙头盔",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,400000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(WyvernColor);
             lch.setUnbreakable(true);
@@ -460,10 +460,10 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("WYVERN_CHESTPLATE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_CHESTPLATE", Material.LEATHER_CHESTPLATE,
-                    "&dWyvern Chestplate",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,400000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&d双足飞龙胸甲",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,400000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(WyvernColor);
             lch.setUnbreakable(true);
@@ -478,10 +478,10 @@ public final class Draconic extends AbstractAddon {
         }
         if(SlimefunItem.getById("WYVERN_LEGGINGS") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_LEGGINGS", Material.LEATHER_LEGGINGS,
-                    "&dWyvern Leggings",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,400000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&d双足飞龙护腿",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,400000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(WyvernColor);
             lch.setUnbreakable(true);
@@ -496,10 +496,10 @@ public final class Draconic extends AbstractAddon {
         }
         if(SlimefunItem.getById("WYVERN_BOOTS") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_BOOTS", Material.LEATHER_BOOTS,
-                    "&dWyvern Boots",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,400000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&d双足飞龙靴子",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,400000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(WyvernColor);
             lch.setUnbreakable(true);
@@ -515,8 +515,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("BASIC_INJECTOR") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("BASIC_INJECTOR", Material.IRON_BLOCK,
-                    "&fBasic Fusion Injector",
-                    "&9Fusion Crafting Injector");
+                    "&f基础聚合注入器",
+                    "&9向龙块中注入能量");
             ItemStack[] recipe = {
                     new ItemStack(Material.DIAMOND),DRACONIC_CORE,new ItemStack(Material.DIAMOND),
                     new ItemStack(Material.STONE),new ItemStack(Material.IRON_BLOCK),new ItemStack(Material.STONE),
@@ -529,8 +529,8 @@ public final class Draconic extends AbstractAddon {
         if(SlimefunItem.getById("AWAKENED_DRACONIUM_BLOCK") == null){
             SlimefunItemStack awakened_draconium_block = new SlimefunItemStack("AWAKENED_DRACONIUM_BLOCK",
                     Material.ORANGE_TERRACOTTA,
-                    "&6Awakened Draconium Block",
-                    "&7Used to craft draconic items");
+                    "&6觉醒龙块",
+                    "&7龙之研究中的稀有材料");
             ItemStack[] recipe = {
                     null,null,null,
                     null,null,null,
@@ -545,8 +545,8 @@ public final class Draconic extends AbstractAddon {
         if(SlimefunItem.getById("AWAKENED_DRACONIUM_INGOT") == null){
             SlimefunItemStack awakened_draconium_block = new SlimefunItemStack("AWAKENED_DRACONIUM_INGOT",
                     Material.ORANGE_DYE,
-                    "&6Awakened Draconium Ingot",
-                    "&7Used to craft draconic items");
+                    "&6觉醒龙锭",
+                    "&7用于合成觉醒级别的龙之护甲与工具");
             ItemStack[] recipe = {
                     AWAKENED_DRACONIUM_BLOCK,null,null,
                     null,null,null,
@@ -564,8 +564,8 @@ public final class Draconic extends AbstractAddon {
         if(SlimefunItem.getById("AWAKENED_CORE") == null){
             SlimefunItemStack awakened_core = new SlimefunItemStack("AWAKENED_CORE",
                     Material.HONEYCOMB,
-                    "&6Awakened Core",
-                    "&7Used to craft draconic items");
+                    "&6觉醒核心",
+                    "&7用于合成觉醒级别的龙之护甲与工具");
             ItemStack[] recipe = {
                     null,null,null,
                     null,null,null,
@@ -581,8 +581,8 @@ public final class Draconic extends AbstractAddon {
         if(SlimefunItem.getById("DRACONIC_ENERGY_CORE") == null){
             SlimefunItemStack draconic_energy_core = new SlimefunItemStack("DRACONIC_ENERGY_CORE",
                     Material.YELLOW_DYE,
-                    "&6Draconic Energy Core",
-                    "&7Used to craft draconic items");
+                    "&6神龙能量核心",
+                    "&7制作觉醒龙套装的必备材料");
             ItemStack[] recipe = {
                     AWAKENED_DRACONIUM_INGOT,WYVERN_ENERGY_CORE,AWAKENED_DRACONIUM_INGOT,
                     WYVERN_ENERGY_CORE,WYVERN_CORE,WYVERN_ENERGY_CORE,
@@ -598,10 +598,10 @@ public final class Draconic extends AbstractAddon {
         Color DraconicColor = Color.fromRGB(245, 158, 7);
         if(SlimefunItem.getById("DRACONIC_HELMET") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_HELMET", Material.LEATHER_HELMET,
-                    "&6Draconic Helmet",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,800000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&6神龙头盔",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,800000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(DraconicColor);
             lch.setUnbreakable(true);
@@ -618,10 +618,10 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("DRACONIC_CHESTPLATE") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_CHESTPLATE", Material.LEATHER_CHESTPLATE,
-                    "&6Draconic Chestplate",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,800000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&6神龙胸甲",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,800000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(DraconicColor);
             lch.setUnbreakable(true);
@@ -637,10 +637,10 @@ public final class Draconic extends AbstractAddon {
         }
         if(SlimefunItem.getById("DRACONIC_LEGGINGS") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_LEGGINGS", Material.LEATHER_LEGGINGS,
-                    "&6Draconic Leggings",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,800000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&6神龙护腿",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,800000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(DraconicColor);
             lch.setUnbreakable(true);
@@ -656,10 +656,10 @@ public final class Draconic extends AbstractAddon {
         }
         if(SlimefunItem.getById("DRACONIC_BOOTS") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_BOOTS", Material.LEATHER_BOOTS,
-                    "&6Draconic Boots",
-                    "&6Upgrades:", "&3J Capacity &6-", "&3Shield Capacity &6-", "&3Shield Recovery &6-","",
-                    LoreBuilder.powerCharged(0,800000), "", "&6Item Ability: Shield", "&7Uses Electric Power to " +
-                    "generate", "&7a shield that protects you", "&7against most attacks");
+                    "&6神龙靴子",
+                    "&6充能升级:", "&3电容量 &6-", "&3护盾容量 &6-", "&3护盾回收 &6-","",
+                    LoreBuilder.powerCharged(0,800000), "", "&6装备技能:护盾", "&7充电" +
+                    "以发动技能", "&7护盾将保护你", "&7免受大部分伤害");
             LeatherArmorMeta lch = (LeatherArmorMeta)itemStack.getItemMeta();
             lch.setColor(DraconicColor);
             lch.setUnbreakable(true);
@@ -676,8 +676,8 @@ public final class Draconic extends AbstractAddon {
         
         if(SlimefunItem.getById("BASIC_INJECTOR") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("BASIC_INJECTOR", Material.IRON_BLOCK,
-                    "&FBasic Fusion Injector",
-                    "&9Fusion Crafting Injector");
+                    "&F基础聚合注入器",
+                    "&9融合器最基本基座");
             ItemStack[] recipe = {
                     endcrystal,endcrystal,endcrystal,
                     endcrystal,new ItemStack(Material.IRON_BLOCK),endcrystal,
@@ -690,8 +690,8 @@ public final class Draconic extends AbstractAddon {
 
         if(SlimefunItem.getById("WYVERN_INJECTOR") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("WYVERN_INJECTOR", Material.PURPLE_TERRACOTTA,
-                    "&dWyvern Fusion Injector",
-                    "&9Fusion Crafting Injector");
+                    "&d飞龙聚合注入器",
+                    "&9融合器基座");
             ItemStack[] recipe = {
                     null,null,null,
                     null,null,null,
@@ -703,8 +703,8 @@ public final class Draconic extends AbstractAddon {
         }
         if(SlimefunItem.getById("DRACONIC_INJECTOR") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("DRACONIC_INJECTOR", Material.ORANGE_CONCRETE,
-                    "&6Draconic Fusion Injector",
-                    "&9Fusion Crafting Injector");
+                    "&6神龙聚合注入器",
+                    "&9融合器基座");
             ItemStack[] recipe = {
                     null,null,null,
                     null,null,null,
@@ -714,10 +714,10 @@ public final class Draconic extends AbstractAddon {
                     recipe,500000);
             slimeitem.register(this);
         }
-        /*if(SlimefunItem.getById("CHAOTIC_INJECTOR") == null){
+        if(SlimefunItem.getById("CHAOTIC_INJECTOR") == null){
             SlimefunItemStack itemStack = new SlimefunItemStack("CHAOTIC_INJECTOR", Material.END_PORTAL_FRAME,
-                    "&8Chaotic Fusion Injector",
-                    "&9Fusion Crafting Injector");
+                    "&8混沌聚合注入器",
+                    "&9融合器基座");
             ItemStack[] recipe = {
                     endcrystal,endcrystal,endcrystal,
                     endcrystal,SlimefunItem.getById("DRACONIC_INJECTOR").getItem(),endcrystal,
@@ -726,15 +726,16 @@ public final class Draconic extends AbstractAddon {
             ElectroBlock slimeitem = new ElectroBlock(DraconicGroup, itemStack,FusionCrafting.TYPE,
                     recipe,1000000);
             slimeitem.register(this);
-        }*/
+        }
         if(SlimefunItem.getById("DRACONIC_ENERGY_INFUSER") == null) {
             SlimefunItemStack DRACONIC_ENERGY_INFUSER = new SlimefunItemStack(
                     "DRACONIC_ENERGY_INFUSER",
                     Material.DRAGON_HEAD,
-                    "&6Draconic Energy Infuser",
-                    "&7Quickly charges items",
-                    "&8⇨ &e⚡ &750,000 J Per Second",
-                    "&8⇨ &e⚡ &7Energy Loss: &c50%"
+                    "&6神龙能量注入器",
+                    "&7机械里溢满了能量",
+                    "&7可快速给物品充电",
+                    "&8⇨ &e⚡ &750,000 J/s",
+                    "&8⇨ &e⚡ &7能量损耗: &c50%"
             );
             new ChargingBench(DraconicGroup,DRACONIC_ENERGY_INFUSER , RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                     AWAKENED_DRACONIUM_BLOCK, AWAKENED_DRACONIUM_BLOCK, AWAKENED_DRACONIUM_BLOCK,
@@ -743,13 +744,13 @@ public final class Draconic extends AbstractAddon {
             }).setCapacity(10000).setEnergyConsumption(10000).setProcessingSpeed(30).register(this);
         }
 
-        /*if(SlimefunItem.getById("DRACONIC_OP_ENERGY") == null) {
+        if(SlimefunItem.getById("DRACONIC_OP_ENERGY") == null) {
             SlimefunItemStack DRACONIC_OP_ENERGY = new SlimefunItemStack(
                     "DRACONIC_OP_ENERGY",
                     Material.END_ROD,
-                    "&6Draconic Energy Generator",
-                    "&7Quickly Generate energy",
-                    "&8⇨ &e⚡ &7100,000 J Per Second","&cIn the day only!"
+                    "&6神龙粒子发生器",
+                    "&7释放出巨大的能量",
+                    "&8⇨ &e⚡ &7100,000 J/s","&c仅在白天工作!"
             );
             new SolarGenerator(DraconicGroup,100000,0,DRACONIC_OP_ENERGY , RecipeType.ENHANCED_CRAFTING_TABLE,
                     new ItemStack[] {
@@ -757,7 +758,7 @@ public final class Draconic extends AbstractAddon {
                             AWAKENED_DRACONIUM_BLOCK, SlimefunItems.SOLAR_GENERATOR_4, endcrystal,
                             AWAKENED_DRACONIUM_BLOCK, AWAKENED_DRACONIUM_BLOCK, AWAKENED_DRACONIUM_BLOCK,
                     }).register(this);
-        }*/
+        }
     }
 
     public static float getArmorEnergy(ItemStack item){

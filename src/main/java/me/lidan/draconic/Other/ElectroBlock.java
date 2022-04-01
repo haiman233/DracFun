@@ -70,7 +70,7 @@ public class ElectroBlock extends SlimefunItem implements EnergyNetComponent {
         e.cancel();
         lockedBlocks.putIfAbsent(block.getLocation(), 0d);
         if (lockedBlocks.get(block.getLocation()) == -1d) {
-            p.sendMessage("§cThis block is locked.");
+            p.sendMessage("§c该方块已上锁");
             return;
         }
         // p.sendMessage("[DEBUG] " + lockedBlocks.get(block.getLocation()));
@@ -84,7 +84,7 @@ public class ElectroBlock extends SlimefunItem implements EnergyNetComponent {
                 }
                  */
             if (lockedBlocks.get(block.getLocation()) > 0) {
-                p.sendMessage("§cThis core is locked.");
+                p.sendMessage("§c该核心已上锁");
                 return;
             }
             Draconic.allvars.put("openinv::" + p.getName(), block.getLocation().clone());
